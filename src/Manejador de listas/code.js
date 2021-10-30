@@ -10,59 +10,87 @@ function submitNotes() {
 
     const noteDiv =  document.getElementById("note-div");
 
-    const createDiv = document.createElement("div");
+    if (inputNote == 0 || mainText == 0) {
+        const errorContainer = document.getElementById("error-container");
+        if (errorContainer.children.length == 0) {
+            const newDiv = document.createElement("div");
 
-    const createButton = document.createElement("button");
+            const newId = document.createAttribute("id");
 
-    createButton.innerText="details"
+            newId.value = "div-error-id"
 
-    const createButton2 = document.createElement("button");
+            newDiv.setAttributeNode(newId);
 
-    createButton2.innerText="delete"
+            const fragmento = document.createDocumentFragment();
 
-    createButton.addEventListener("click", viewDetails = () =>{
-        document.getElementsByClassName("popup")
-    [0].classList.add("active");
+            newDiv.innerHTML = "<p id=error-p> Escribe texto porfavor </p>"
 
-    const divContainer = document.getElementById("div-container");
+            fragmento.appendChild(newDiv);
 
-    const createDiv = document.createElement("div");
+            errorContainer.appendChild(fragmento);
+        }
+        }else {
+            const divErrorId = document.getElementById("div-error-id");
 
-    const fragmento = document.createDocumentFragment();
+            const errorContainers = document.getElementById("error-container");
+            if (errorContainers.children.length == 1) {
+                errorContainers.removeChild(divErrorId);
+            }
 
-    fragmento.appendChild(createDiv);
-    divContainer.appendChild(fragmento);
+            const createDiv = document.createElement("div");
 
-    divContainer.innerHTML = title + paragraph;
-    })
+            const createButton = document.createElement("button");
 
-    const dismissPopupBtn = document.getElementById("dismiss-popup-btn");
-        dismissPopupBtn.addEventListener("click", function(){
-        document.getElementsByClassName("popup")
-    [0].classList.remove("active");
-})
+            createButton.innerText="details"
+
+            const createButton2 = document.createElement("button");
+
+            createButton2.innerText="delete"
+
+            createButton.addEventListener("click", viewDetails = () =>{
+                document.getElementsByClassName("popup")
+            [0].classList.add("active");
+
+            const divContainer = document.getElementById("div-container");
+
+            const createDiv = document.createElement("div");
+
+            const fragmento = document.createDocumentFragment();
+
+            fragmento.appendChild(createDiv);
+            divContainer.appendChild(fragmento);
+
+            divContainer.innerHTML = title + paragraph;
+            })
+
+            const dismissPopupBtn = document.getElementById("dismiss-popup-btn");
+                dismissPopupBtn.addEventListener("click", function(){
+                document.getElementsByClassName("popup")
+            [0].classList.remove("active");
+        })
 
 
-    createButton2.addEventListener("click", viewDetails = (evento) =>{
-        evento.target.parentNode.remove();
-    })
+            createButton2.addEventListener("click", viewDetails = (evento) =>{
+                evento.target.parentNode.remove();
+            })
 
-    const fragmento = document.createDocumentFragment();
-    const fragmento2 = document.createDocumentFragment();
-    const fragmento3 = document.createDocumentFragment();
+            const fragmento = document.createDocumentFragment();
+            const fragmento2 = document.createDocumentFragment();
+            const fragmento3 = document.createDocumentFragment();
 
-    let title = `<h2> ${inputNote} </h2>`;
-    let paragraph = `<p> ${mainText} </p>`;
+            let title = `<h2> ${inputNote} </h2>`;
+            let paragraph = `<p> ${mainText} </p>`;
 
-    createDiv.innerHTML = title;
+            createDiv.innerHTML = title;
+            
 
-    fragmento.appendChild(createDiv);
-    noteDiv.appendChild(fragmento);
-    
-    fragmento2.appendChild(createButton);
-    createDiv.appendChild(fragmento2)
+            fragmento.appendChild(createDiv);
+            noteDiv.appendChild(fragmento);
+            
+            fragmento2.appendChild(createButton);
+            createDiv.appendChild(fragmento2)
 
-    fragmento3.appendChild(createButton2);
-    createDiv.appendChild(fragmento3)
-
+            fragmento3.appendChild(createButton2);
+            createDiv.appendChild(fragmento3)
+    }
 }
