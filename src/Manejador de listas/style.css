@@ -1,0 +1,30 @@
+body{
+    background-color: #ddd;
+}
+
+.center{
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    align-items: center;
+}
+
+.popup{
+    width:350px;
+    height:330px;
+    padding: 20px;
+    background:#f5f5f5;
+    z-index:2;
+    text-align:center;
+    opacity:0;
+    top:-200%;
+    transform:translate(-50%,-50%) scale(0.5);
+
+}
+
+.popup.active {
+    opacity:10;
+    top:50%;
+    transform:translate(-50%,-50%) scale(1);
+  }
