@@ -1,5 +1,11 @@
+*{
+    box-sizing: border-box;
+    padding: 0;
+    margin: 0;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
 body{
-    background-color: #ddd;
 }
 
 .center{
@@ -14,17 +20,141 @@ body{
     width:350px;
     height:330px;
     padding: 20px;
-    background:#f5f5f5;
-    z-index:2;
     text-align:center;
     opacity:0;
     top:-200%;
     transform:translate(-50%,-50%) scale(0.5);
     word-break: break-all;
+    pointer-events: none;
 }
 
 .popup.active {
-    opacity:1;
+    opacity: 1;
+    background-color: bisque;
     top:50%;
     transform:translate(-50%,-50%) scale(1);
-  }
+    pointer-events: all;
+}
+
+.title-note{
+    text-align: center;
+    padding: 30px;
+}
+
+.title-note h1{
+    font-size: 40px;
+    margin-bottom: 10px;
+}
+
+.title-note p{
+    font-size: 15px;
+    color: #33CA7f;
+}
+
+.error-class{
+    color: #f5f5f5;
+    width: 24%;
+    text-align: center;
+    margin: 0 auto;
+    
+}
+
+.class-p-error{
+    background-color: #e01541;
+    padding: 12px;
+    margin: 10px;
+    box-shadow: 0px 2px 3px  #300;
+}
+
+.input-note-class{
+    text-align: center;
+    width: 99%;
+    margin: 0 auto;
+    background-color: #f5f5f5;
+    padding: 20px;
+    width: 300px;
+    text-align: end;
+}
+
+.input-note-class label{
+    margin-right: 17px;
+}
+
+.input-note-class input{
+    width: 205px;
+    outline: none;
+    border: 1px;
+    border: 2px solid  #a4b1aa;
+    padding: 10px;
+}
+
+.input-text-area{
+    display: flex;
+    text-align: center;
+    width: 99%;
+    margin: 0 auto;
+    background-color: #f5f5f5;
+    padding: 20px;
+    width: 300px;
+    margin-top: 20px;
+    text-align: end;
+}
+
+.input-text-area label{
+    padding-top: 20%;
+    margin-right: 23px;
+}
+
+.input-text-area textarea{
+    outline: none;
+    border: 1px;
+    border: 2px solid  #a4b1aa;
+    padding: 10px;
+    resize: none;
+}
+
+.div-button-submit{
+    display: flex;
+    justify-content: center;
+    margin-top: 20px;
+}
+
+.div-button-submit button{
+    padding: 10px;
+    width: 300px;
+    outline: none;
+    border: none;
+    background-color: #33CA7f;
+    color: #fff;
+}
+
+.class-end{
+    width: fit-content;
+    margin: 0 auto;
+    text-align: center;
+    margin-top: 20px;
+    border: 2px solid #a4b1aa;
+    padding: 20px;
+}
+
+.classButton{
+   margin: 7px;
+   outline: none;
+   border: none;
+   padding: 13px;
+   width: 100px;
+   height: max-content;
+   background-color: #33CA7f;
+   color: #fff;
+}
+
+.classButton-2{
+   margin: 7px;
+   outline: none;
+   border: none;
+   padding: 13px;
+   width: 100px;
+   height: max-content;
+   background-color: #e01541;
+   color: #fff;
+}

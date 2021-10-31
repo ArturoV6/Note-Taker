@@ -10,6 +10,12 @@ function submitNotes() {
 
     const noteDiv =  document.getElementById("note-div");
 
+    const createClass = document.createAttribute("class");
+
+    createClass.value = "class-note";
+
+    noteDiv.setAttributeNode(createClass);
+
     if (inputNote == 0 || mainText == 0) {
         const errorContainer = document.getElementById("error-container");
         if (errorContainer.children.length == 0) {
@@ -23,7 +29,7 @@ function submitNotes() {
 
             const fragmento = document.createDocumentFragment();
 
-            newDiv.innerHTML = "<p id=error-p> Escribe texto porfavor </p>"
+            newDiv.innerHTML = "<p id=error-p class=class-p-error>Fill all inputs</p>"
 
             fragmento.appendChild(newDiv);
 
@@ -39,11 +45,29 @@ function submitNotes() {
 
             const createDiv = document.createElement("div");
 
+            const createAnotherFknClass = document.createAttribute("class");
+
+            createAnotherFknClass.value = "class-end";
+
+            createDiv.setAttributeNode(createAnotherFknClass);
+
             const createButton = document.createElement("button");
 
             createButton.innerText="details"
 
             const createButton2 = document.createElement("button");
+
+            const createClassButton = document.createAttribute("class");
+
+            createClassButton.value="classButton"
+
+            createButton.setAttributeNode(createClassButton);
+
+            const createClassButton2 = document.createAttribute("class");
+
+            createClassButton2.value="classButton-2"
+
+            createButton2.setAttributeNode(createClassButton2);
 
             createButton2.innerText="delete"
 
