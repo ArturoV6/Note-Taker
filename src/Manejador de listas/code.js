@@ -75,6 +75,14 @@ function submitNotes() {
                 document.getElementsByClassName("popup")
             [0].classList.add("active");
 
+            const divOverlay = document.getElementById("overlay");
+            
+            const createClassOverlay = document.createAttribute("class");
+
+            createClassOverlay.value = "class-overlay";
+
+            divOverlay.setAttributeNode(createClassOverlay);
+
             const divContainer = document.getElementById("div-container");
 
             const createDiv = document.createElement("div");
@@ -89,6 +97,8 @@ function submitNotes() {
 
             const dismissPopupBtn = document.getElementById("dismiss-popup-btn");
                 dismissPopupBtn.addEventListener("click", function(){
+                    const removeClass = document.getElementById("overlay");
+                    removeClass.classList.remove("class-overlay");
                 document.getElementsByClassName("popup")
             [0].classList.remove("active");
         })
